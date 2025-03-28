@@ -2,6 +2,10 @@
 
 # Compiled output
 /dist
+*.exe
+*.dmg
+*.app
+*.asar
 /tmp
 /out-tsc
 /bazel-out
