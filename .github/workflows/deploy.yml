@@ -2,7 +2,7 @@ name: Build and Deploy Electron App
 
 on:
   push:
-    branches: [ main ] 
+    branches: [ main ]  # Adjust this if you use a different branch
 
 jobs:
   build-deploy:
@@ -14,7 +14,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20.17
+          node-version: 16
 
       - name: Install dependencies
         run: npm install
@@ -22,12 +22,10 @@ jobs:
       - name: Build Electron App
         run: npm run dist -- --publish never
 
-      - name: Deploy artifacts via SCP
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{secrets.SCP_HOST}}
-          username: ${{secrets.SCP_USER}}
-          key: ${{secrets.SCP_KEY}}
-          port: ${{secrets.SCP_PORT}}   
-          source: "release/*"
-          target: "/var/www/electron-updates/"
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: Deploy to Firebase Hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: firebase deploy --only hosting
