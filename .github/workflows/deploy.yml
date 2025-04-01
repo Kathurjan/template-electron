@@ -1,0 +1,33 @@
+name: Build and Deploy Electron App
+
+on:
+  push:
+    branches: [ main ] 
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Electron App
+        run: npm run dist -- --publish never
+
+      - name: Deploy artifacts via SCP
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SCP_HOST }}
+          username: ${{ secrets.SCP_USER }}
+          key: ${{ secrets.SCP_KEY }}
+          port: ${{ secrets.SCP_PORT }}   
+          source: "release/*"
+          target: "/var/www/electron-updates/"
