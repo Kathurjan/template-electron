@@ -54,7 +54,6 @@ This template is configured for auto-updates using `electron-updater` and a gene
 
 2.  **Update `package.json`:**
     * Modify the `publish` section in your `package.json` to point to your hosting URL.
-    * Example for AWS S3:
         ```json
         "publish": [
           {
