@@ -1,0 +1,8 @@
+version: 1.0.2
+files:
+  - url: ElectronTemplate-Setup-1.0.2.exe
+    sha512: 1ppwBatz6gEU7VYBL/lNAUq448+ORVABUcuB3drlQ7SCilRdR4wASX8HW+svHqnuysMADm5gobT55c14tpA5WQ==
+    size: 92588592
+path: ElectronTemplate-Setup-1.0.2.exe
+sha512: 1ppwBatz6gEU7VYBL/lNAUq448+ORVABUcuB3drlQ7SCilRdR4wASX8HW+svHqnuysMADm5gobT55c14tpA5WQ==
+releaseDate: '2025-03-31T08:08:55.093Z'

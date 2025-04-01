@@ -1,6 +1,6 @@
 {
   "name": "electron-template",
-  "version": "0.0.0",
+  "version": "1.0.3",
   "main": "main.js",
   "scripts": {
     "ng": "ng",
@@ -21,8 +21,12 @@
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
+    "electron-is-dev": "^3.0.1",
+    "electron-log": "^5.3.3",
+    "electron-updater": "^6.6.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "update-electron-app": "^3.1.1",
     "zone.js": "~0.14.10"
   },
   "devDependencies": {
@@ -53,6 +57,12 @@
     ],
     "win": {
       "target": "nsis"
-    }
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "https://electron-template.web.app/"
+      }
+    ]
   }
 }
