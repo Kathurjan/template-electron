@@ -6,7 +6,7 @@ This repository provides a template for building Electron applications using Ang
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/Kathurjan/template-electron.git](https://github.com/Kathurjan/template-electron.git)
+    git clone https://github.com/Kathurjan/template-electron.git
     cd template-electron
     ```
 2.  **Install dependencies:**
